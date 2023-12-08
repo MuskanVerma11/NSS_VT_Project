@@ -20,7 +20,14 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff",
+        "fonts":{
+            "Quicksand":{
+              "regular":{
+                  "uri":"https://fonts.google.com/specimen/Quicksand?query=quick"
+              }
+            }
+        }
       }
     },
     "web": {

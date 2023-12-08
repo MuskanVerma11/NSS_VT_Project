@@ -1,11 +1,22 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import Feedback from './screens/Feedback';
-import Login from './screens/Login';
-import Navigation from './Navigation/Navigation';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import TabScreen from './TabScreen';
+import LogIn from './Screens/Authentication/LogIn';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import SignUp from './Screens/Authentication/SignUp'
+
+
+
 
 export default function App() {
   return (
-      <Navigation/>
+  
+      <SafeAreaView style={{flex:1}}>
+      <SignUp/>
+     
+      </SafeAreaView>
+     
+    
   );
 }
 
