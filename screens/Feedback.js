@@ -2,8 +2,9 @@ import { View, Text , SafeAreaView, StyleSheet, Image, TextInput, KeyboardAvoidi
 import React, { useState } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Ratings from './components/Ratings';
+import HomeScreen from './HomeScreen';
 
-export default function Feedback() {
+export default function Feedback({navigation}) {
     const [text,setText]=useState('');
 
     const handleSend=()=>{
@@ -36,7 +37,7 @@ export default function Feedback() {
       <TouchableOpacity style={styles.btnFill} onPress={handleSend}>
         <Text style={styles.btnFillText}>Send</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.btnOutline}>
+      <TouchableOpacity style={styles.btnOutline} onPress={()=>navigation.navigate('Home')}>
         <Text style={styles.btnOutlineText}>Cancel</Text>
       </TouchableOpacity>
     </SafeAreaView>
