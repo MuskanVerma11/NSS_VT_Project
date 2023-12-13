@@ -21,10 +21,19 @@ import { EvilIcons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
 import LogIn from '../screens/Authentication/LogIn';
+import UpcomingEvent from '../screens/UpcomingEvent';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Upcoming from '../screens/UpcomingEventsSubScreen/Upcoming';
+import Attending from '../screens/UpcomingEventsSubScreen/Attending'
+import Attended from '../screens/UpcomingEventsSubScreen/Attended'
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import EventRegistration from '../screens/UpcomingEventsSubScreen/EventRegistration';
 
+const TopTab=createMaterialTopTabNavigator();
 const Tab=createBottomTabNavigator();
 const Drawer=createDrawerNavigator();
 const Stack=createStackNavigator();
+
 
 const MainTabNavigator=()=>{
   return(
@@ -119,6 +128,46 @@ const MainDrawerNavigator=()=>{
   )
 }
 
+const UpcomingEventsTopTab = () => {
+  return (
+    <TopTab.Navigator screenOptions={{
+      tabBarIndicatorContainerStyle:{
+        backgroundColor:"#white",
+        borderWidth:0.1,
+      },
+      tabBarIndicatorStyle: {
+        backgroundColor:"#322962"
+      },
+      tabBarAccessibilityLabel:'Main Navigation',
+      tabBarActiveTintColor:"#322962",
+      tabBarInactiveTintColor:"#a1a1a1",
+      tabBarAllowFontScaling:true,
+      tabBarPressColor:"#322962",
+      tabBarLabelStyle:{
+        fontWeight:"500",
+        textTransform:"capitalize",
+        fontSize:wp(3.7)
+      }
+    }}>
+      <TopTab.Screen name='Upcoming' component={Upcoming} options={{ 
+        tabBarLabel: "Upcoming",
+        }} />
+      <TopTab.Screen name='Attending' component={Attending} options={{ tabBarLabel: "Attending" }} />
+      <TopTab.Screen name='Attended' component={Attended} options={{ tabBarLabel: "Attended" }} />
+    </TopTab.Navigator>
+  );
+}
+
+const HomeStack = createStackNavigator();
+
+const HomeStackScreen = () => {
+  return (
+    <HomeStack.Navigator initialRouteName='UpcomingEvent'>
+      <HomeStack.Screen name="UpcomingEvent" component={UpcomingEventsTopTab} options={{headerShown:false}}/>
+    </HomeStack.Navigator>
+  );
+}
+
 const AppNavigator=()=>{
   return(
     <NavigationContainer>
@@ -127,6 +176,10 @@ const AppNavigator=()=>{
         <Stack.Screen name='Log In' component={LogIn} options={{
           headerShown:false
         }}/>
+        <Stack.Screen name='Upcoming Event' component={HomeStackScreen} options={{
+          headerTitle:"Events"
+        }}/>
+        <Stack.Screen name='Event Registration' component={EventRegistration} options={{headerShown:false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
