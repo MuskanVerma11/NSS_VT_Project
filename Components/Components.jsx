@@ -2,11 +2,13 @@ import React from "react";
 import { TouchableOpacity , View, Text} from "react-native";
 import { StyleSheet } from "react-native";
 import { Appcolor } from "../screens/utils/AppColors";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 
 const Components = ({buttonTitle, onPress}) =>{
+    
     return(
         <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPress}>
                 <View style={styles.btnContainer}>
                     <Text style={styles.btn}>{buttonTitle}</Text>
                 </View>
@@ -19,17 +21,16 @@ export default Components
 
 const styles= StyleSheet.create({
     btn:{
-        fontSize:20,
+        fontSize:wp(4.3),
         backgroundColor:Appcolor.NSS,
-        height:50,
         borderRadius:10,
         width:250,
         color:'#ffffff',
         textAlign:'center',
-        margin:40,
-        paddingVertical:10
+        paddingVertical:10,
     },
     btnContainer:{
         alignItems:'center',
+        marginTop:40,
     }
 })

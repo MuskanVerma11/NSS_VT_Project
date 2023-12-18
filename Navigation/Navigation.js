@@ -31,6 +31,7 @@ import LeaderboardScreen from '../screens/LeaderboardScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import SignUp from '../screens/Authentication/SignUp';
 
 const TopTab=createMaterialTopTabNavigator();
 const Tab=createBottomTabNavigator();
@@ -69,8 +70,9 @@ const MainTabNavigator=()=>{
         <Tab.Screen name="Post" component={Post}
           options={{
             tabBarIcon: ({ color, size }) => (<AntDesign name="pluscircleo" size={24} color="white" />),
-
-          }} />
+            tabBarHideOnKeyboard : true
+          }}
+          />
         <Tab.Screen name="Profile" component={Profile}
           options={{
             tabBarIcon: ({ color, size }) => (<MaterialIcons name="account-circle" size={24} color="white" />),
@@ -181,9 +183,12 @@ const HomeStackScreen = () => {
 const AppNavigator=()=>{
   return(
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName='Log In'>
         <Stack.Screen name='MainDrawer' component={MainDrawerNavigator} options={{headerShown:false}}/>
         <Stack.Screen name='Log In' component={LogIn} options={{
+          headerShown:false
+        }}/>
+        <Stack.Screen name='SignUp' component={SignUp} options={{
           headerShown:false
         }}/>
         <Stack.Screen name='Upcoming Event' component={HomeStackScreen} options={{
