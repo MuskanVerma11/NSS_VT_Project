@@ -13,7 +13,6 @@ import Feedback from '../screens/Feedback';
 import AboutNss from '../screens/AboutNss';
 import Community from '../screens/Community';
 import Gallery from '../screens/Gallery';
-import Leaderboard from '../screens/Leaderboard';
 import Terms_and_conditions from '../screens/Terms_and_conditions';
 import CustomDrawer from './CustomDrawer';
 import { FontAwesome } from '@expo/vector-icons';
@@ -28,6 +27,10 @@ import Attending from '../screens/UpcomingEventsSubScreen/Attending'
 import Attended from '../screens/UpcomingEventsSubScreen/Attended'
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import EventRegistration from '../screens/UpcomingEventsSubScreen/EventRegistration';
+import LeaderboardScreen from '../screens/LeaderboardScreen';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const TopTab=createMaterialTopTabNavigator();
 const Tab=createBottomTabNavigator();
@@ -77,6 +80,7 @@ const MainTabNavigator=()=>{
 }
 
 const MainDrawerNavigator=()=>{
+  const navigation=useNavigation()
   return(
     <Drawer.Navigator screenOptions={{
       headerShown:false,
@@ -108,10 +112,16 @@ const MainDrawerNavigator=()=>{
                 <FontAwesome name="photo" size={24} color={color} />
               )
             }}/>
-            <Drawer.Screen name='Leaderboard' component={Leaderboard} 
+            <Drawer.Screen name='Leaderboard Screen' component={LeaderboardScreen} 
              options={{
               drawerIcon:({color})=>(
-                  <SimpleLineIcons name="trophy" size={24} color={color} />)
+                  <SimpleLineIcons name="trophy" size={24} color={color} />),
+                  title:"Leaderboard",
+                  headerShown:true,
+                  headerStyle:{
+                    backgroundColor:"#322962"
+                  },
+                  headerTintColor:"#ffffff"
             }}/>
             <Drawer.Screen name='Feedback' component={Feedback} 
             options={{
