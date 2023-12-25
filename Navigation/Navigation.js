@@ -106,7 +106,9 @@ const MainDrawerNavigator=()=>{
             options={{
               drawerIcon:({color})=>(
                 <Ionicons name="people-outline" size={24} color={color} />
-              )
+              ),
+              headerShown:true,
+              headerTitleAlign:"center",
             }}/>
             <Drawer.Screen name='Gallery' component={Gallery} 
             options={{
