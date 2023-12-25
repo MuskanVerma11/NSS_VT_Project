@@ -60,11 +60,16 @@ export default function Community() {
       Name2={"Manish Kunar"}
       Role2={"Tech-Lead"}
       Details2={"B.Tech |  Electrical | 3rd Year\nGovt. Engg. College Bilaspur"}
-      Name3={"Tanisha Deshmukh"}
-      Role3={"Tech-Member"}
-      Details3={"B.Tech |  Electrical | 3rd Year\nGovt. Engg. College Bilaspur"}
       profilePic1={require("../assets/picture2.png")}
       profilePic2={require("../assets/picture2.png")}
+      />
+
+      <CommunityCard
+      cardColor={"#BDD09D"} 
+      Name1={"Tanisha Deshmukh"}
+      Role1={"Tech-Member"}
+      Details1={"B.Tech |  Electrical | 3rd Year\nGovt. Engg. College Bilaspur"}
+      profilePic1={require("../assets/picture2.png")}
       />
 
       <CommunityCard cardColor={"#847ECF"} 
@@ -72,12 +77,16 @@ export default function Community() {
       Name1={"Rishita Agrawal"} 
       Role1={"NRDT-Head"} 
       Details1={"B.Tech |  ET&T |  3rd Year\nGovt. Engg. College Bilaspur"} 
-      Name2={"Tanishka Singh Pawar"}
+      profilePic1={require("../assets/picture2.png")}
+      />
+
+      <CommunityCard cardColor={"#847ECF"} 
+      Name1={"Tanishka Singh Pawar"}
+      Role1={"NRDT-Member"}
+      Details1={"B.Tech |  Electrical | 2nd Year\nGovt. Engg. College Bilaspur"}
+      Name2={"Nikhil Kumar Koshale"}
       Role2={"NRDT-Member"}
-      Details2={"B.Tech |  Electrical | 2nd Year\nGovt. Engg. College Bilaspur"}
-      Name3={"Nikhil Kumar Koshale"}
-      Role3={"NRDT-Member"}
-      Details3={"B.Tech |  ET&T |  2nd Year\nGovt. Engg. College Bilaspur"}
+      Details2={"B.Tech |  ET&T |  2nd Year\nGovt. Engg. College Bilaspur"}
       profilePic1={require("../assets/picture2.png")}
       profilePic2={require("../assets/picture2.png")}
       />
@@ -94,6 +103,7 @@ export default function Community() {
       profilePic2={require("../assets/picture2.png")}
       />
 
+      <View style={{height:50}}></View>
     </ScrollView>
   )
 }
@@ -102,7 +112,7 @@ const styles=StyleSheet.create({
   container:{
     flex:1,
     backgroundColor:"#ffffff",
-    paddingTop:10
+    paddingVertical:15,
   },
   title:{
     color:"#322962",
@@ -110,6 +120,5 @@ const styles=StyleSheet.create({
     fontStyle:"italic",
     fontWeight:"bold",
     textAlign:"center",
-    marginBottom:20
   },
 })

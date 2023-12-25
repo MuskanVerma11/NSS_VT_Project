@@ -8,14 +8,19 @@ export default function CommunityCard({
     cardColor,
     cardName,  
     Name1, Role1, Details1, profilePic1, 
-    Name2, Role2, Details2, profilePic2,
-    Name3, Role3, Details3, profilePic3,
-    Name4, Role4, Details4, profilePic4,}) {
+    Name2, Role2, Details2, profilePic2,}) {
+      //variable to check whether 2nd profile exist or not 
+      const isSecondProfilePresent = Name2 && Name2.trim() !== '';
+      const isNewCard = cardName && cardName.trim() !== '';
+
   return (
-    <View style={[styles.card,{backgroundColor:cardColor}]}>
+    <View style={[styles.card,{backgroundColor:cardColor}, isNewCard && {marginTop:30}]}>
       <Text style={styles.cardTitle}>{cardName}</Text>
 
-      <View style={styles.profileContainer}>
+      <View style={[
+          styles.profileContainer,
+          !isSecondProfilePresent && { justifyContent: 'center' },
+        ]}>
           <View style={styles.profile}>
             <View style={styles.ProfilePicture}>
               <Image source={profilePic1} style={styles.ProfilePicture}/>
@@ -24,7 +29,8 @@ export default function CommunityCard({
             <Text style={styles.role}>{Role1}</Text>
             <Text style={styles.details}>{Details1}</Text>
           </View>
-          <View style={styles.profile}>
+          {Name2 && Name2.trim() !== '' &&(
+            <View style={styles.profile}>
             <View style={styles.ProfilePicture}>
               <Image source={profilePic2} style={styles.ProfilePicture}/>
             </View>
@@ -32,6 +38,7 @@ export default function CommunityCard({
             <Text style={styles.role}>{Role2}</Text>
             <Text style={styles.details}>{Details2}</Text>
           </View>
+          )}
         </View>
 
       </View>
@@ -41,7 +48,7 @@ export default function CommunityCard({
 const styles=StyleSheet.create({
       card:{
         width:wp(100),
-        marginBottom:30,
+        // marginBottom:30,
         paddingVertical:15,
         paddingHorizontal:10
       },
@@ -49,7 +56,8 @@ const styles=StyleSheet.create({
         fontSize:wp(4.2),
         fontWeight:"bold",
         color:"#322962",
-        textAlign:"center"
+        textAlign:"center",
+        textTransform:"uppercase"
       },
       profileContainer:{
         flexDirection:"row",
