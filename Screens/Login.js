@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { FIREBASE_AUTH } from '../FirebaseConfig';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import Details from './Details';
+import Components from '../Components/Components';
 
 export default function Login({navigation}) {
     const [email,setEmail]=useState('');
@@ -55,7 +56,7 @@ export default function Login({navigation}) {
       
       {loading? <Text style={{textAlign:"center"}}>Loading...</Text> :
       <View>
-        <Button title='Login' onPress={signIn} />
+       <Components buttonTitle='LogIn' width={250} backgroundcolor={'#322962'}/>
         <View style={{height:10}}></View>
         <Button title='Create Account' onPress={signUp}/>
       </View>

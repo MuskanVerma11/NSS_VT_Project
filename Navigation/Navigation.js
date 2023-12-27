@@ -5,33 +5,33 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
-import Home from '../screens/HomeScreen';
-import Post from '../screens/Post';
+import Home from '../Screens/HomeScreen';
+import Post from '../Screens/Post';
 import { AntDesign, MaterialIcons } from '@expo/vector-icons';
-import Profile from '../screens/Profile';
-import Feedback from '../screens/Feedback';
-import AboutNss from '../screens/AboutNss';
-import Community from '../screens/Community';
-import Gallery from '../screens/Gallery';
-import Terms_and_conditions from '../screens/Terms_and_conditions';
+import Profile from '../Screens/Profile';
+import Feedback from '../Screens/Feedback';
+import AboutNss from '../Screens/AboutNss';
+import Community from '../Screens/Community';
+import Gallery from '../Screens/Gallery';
+import Terms_and_conditions from '../Screens/Terms_and_conditions';
 import CustomDrawer from './CustomDrawer';
 import { FontAwesome } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
-import LogIn from '../screens/Authentication/LogIn';
-import UpcomingEvent from '../screens/UpcomingEvent';
+import LogIn from '../Screens/Authentication/LogIn';
+import UpcomingEvent from '../Screens/UpcomingEvent';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import Upcoming from '../screens/UpcomingEventsSubScreen/Upcoming';
-import Attending from '../screens/UpcomingEventsSubScreen/Attending'
-import Attended from '../screens/UpcomingEventsSubScreen/Attended'
+import Upcoming from '../Screens/UpcomingEventsSubScreen/Upcoming';
+import Attending from '../Screens/UpcomingEventsSubScreen/Attending'
+import Attended from '../Screens/UpcomingEventsSubScreen/Attended'
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import EventRegistration from '../screens/UpcomingEventsSubScreen/EventRegistration';
-import LeaderboardScreen from '../screens/LeaderboardScreen';
+import EventRegistration from '../Screens/UpcomingEventsSubScreen/EventRegistration';
+import LeaderboardScreen from '../Screens/LeaderboardScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import SignUp from '../screens/Authentication/SignUp';
+import SignUp from '../Screens/Authentication/SignUp';
 
 const TopTab=createMaterialTopTabNavigator();
 const Tab=createBottomTabNavigator();

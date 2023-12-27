@@ -143,7 +143,7 @@ const SignUp = () => {
 
                                 </View>
 
-                                <Components buttonTitle={'Sign Up'} onPress={handleSignUp} />
+                                <Components buttonTitle={'Sign Up'} onPress={handleSignUp} backgroundcolor={'#322962'} width={250} />
                                 <TouchableOpacity style={{ alignItems: 'center' , marginTop:20}} onPress={()=> navigation.goBack()}>
                                         <Text style={{ fontSize: 16, }}>Already have an account?<Text style={{textDecorationLine:'underline'}}> LogIn</Text></Text>
                                 </TouchableOpacity>

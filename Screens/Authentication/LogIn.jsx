@@ -72,7 +72,7 @@ const LogIn = () => {
                                         <Text style={{color:"#322962"}}>Forgot Password?</Text>
                                         </TouchableOpacity>
                                     </View>
-                                    <Components buttonTitle={'LogIn'} onPress={handleLogin} />
+                                    <Components buttonTitle={'LogIn'} onPress={handleLogin} backgroundcolor={'#322962'} width={250}/>
                                     <TouchableOpacity style={{ alignItems: 'center',margin:6 }} onPress={() =>navigation.navigate('SignUp')}>
                                         <Text style={{ fontSize: 16, }}>New User?<Text style={{textDecorationLine:'underline', color:"#322962"}}> Sign Up</Text></Text>
                                     </TouchableOpacity>
