@@ -4,7 +4,7 @@ import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawe
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
-import LogIn from '../Screens/Authentication/LogIn'
+import LogIn from '../screens/Authentication/LogIn'
 import { useNavigation } from '@react-navigation/native';
 
 export default function CustomDrawer(props) {

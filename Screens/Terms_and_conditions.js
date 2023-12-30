@@ -5,19 +5,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TaC } from '../Data/TaC';
 import { ScrollView } from 'react-native-gesture-handler';
 import Components from '../Components/Components';
-
+import { widthPercentageToDP as wp,heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export default function Terms_and_conditions() {
   return (
     
-      <SafeAreaView style={{flex:1}}>
-        <ScrollView>
+      <SafeAreaView style={styles.container}>
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.HeaderBox}>
-          <TouchableOpacity>
-            <View style={styles.icon}>
-              <AntDesign name='left' size={30} color="#322962" />
-            </View>
-          </TouchableOpacity>
           <Text style={styles.Heading}>Terms and Conditions</Text>
           <Text style={styles.SSubheading}>Last Updated September 14, 2023</Text>
         </View>
@@ -26,12 +21,12 @@ export default function Terms_and_conditions() {
             <Text style={styles.SubHeading}>Contents:</Text>
           </View>
         <FlatList
-        style={{marginBottom:50}}
+        style={{marginBottom:30}}
         data={TaC}
         keyExtractor={(item)=>item.id.toString()}
         renderItem={({item}) =>(
             <View>
-              <Text style={styles.SSubheading}>{item.id} . {item.Heading}</Text>
+              <Text style={styles.item}>{item.id} . {item.Heading}</Text>
             </View>
         )}/>
         </View>
@@ -43,7 +38,7 @@ export default function Terms_and_conditions() {
             renderItem={({item})=>(
               <View style={{paddingRight:15}}>
                 <Text style={styles.SubHeading} >{item.id}. {item.Heading}</Text>
-                <Text style={styles.SSubheading}>{item.Point}</Text>
+                <Text style={styles.item}>{item.Point}</Text>
               </View>
             )}
             />
@@ -61,43 +56,49 @@ export default function Terms_and_conditions() {
 }
 
 const styles = StyleSheet.create({
+  container:{
+    flex:1, 
+    backgroundColor:"#ffffff",
+  },
   HeaderBox: {
-    borderBottomColor: '#808080',
+    borderBottomColor: '#322962',
     borderBottomWidth: 1,
     paddingBottom: 20,
-  },
-  icon: {
-    marginLeft: 15,
-    marginTop: 15,
+    width:wp(100)
   },
   Heading: {
-    fontSize: 28,
+    fontSize:wp(6.6),
     color: "#322962",
     marginTop: 20,
-    marginLeft: 30,
+    fontWeight:"bold",
+    marginLeft:30
   },
   SubHeading: {
-    fontSize: 24,
+    fontSize:wp(5.8),
     color: "#322962",
     marginTop: 20,
-    marginLeft: 30,
+    marginLeft:30,
+    fontWeight:"400"
   },
   SSubheading: {
-    marginTop: 16,
-    marginLeft: 35,
     color: "#322962",
-    fontSize: 18,
-    lineHeight:30,
-    textAlign:"justify"
-  },
-  List:{
-    marginBottom:30
+    fontSize:wp(3.6),
+    lineHeight:20,
+    textAlign:"justify",
+    marginLeft:35
   },
   button:{
     display:'flex',
     flexDirection:'row',
     justifyContent:'space-evenly',
     margin:30,
-    
-  }
+  },
+  item: {
+    color: "#322962",
+    fontSize:wp(4.4),
+    lineHeight:30,
+    textAlign:"justify",
+    marginLeft:30,
+    marginRight:10
+  },
 })
