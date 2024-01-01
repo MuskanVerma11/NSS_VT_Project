@@ -20,7 +20,7 @@ const HomeScreen = ({navigation}) => {
                 <Text style={styles.HighlightBtnText}>Highlights</Text>
                 <FontAwesome5 name="highlighter" size={15} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.EmergencyBtn}>
+            <TouchableOpacity style={styles.EmergencyBtn} >
                 <Text style={styles.EmergencyBtnText}>Emergency</Text>
                 <MaterialCommunityIcons name="alarm-light" size={18} color="white" />
             </TouchableOpacity>

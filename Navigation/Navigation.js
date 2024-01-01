@@ -32,6 +32,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import SignUp from '../screens/Authentication/SignUp';
+import Emergency from '../screens/EmergencyPost';
+import EmergencyPost from '../screens/EmergencyPost';
 
 const TopTab=createMaterialTopTabNavigator();
 const Tab=createBottomTabNavigator();

@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   item: {
     color: "#322962",
-    fontSize:wp(4.4),
+    fontSize:wp(4.1),
     lineHeight:30,
     textAlign:"justify",
     marginLeft:30,
