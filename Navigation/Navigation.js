@@ -32,8 +32,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import SignUp from '../screens/Authentication/SignUp';
-import Emergency from '../screens/EmergencyPost';
-import EmergencyPost from '../screens/EmergencyPost';
+import Highlights from '../screens/Highlights';
 
 const TopTab=createMaterialTopTabNavigator();
 const Tab=createBottomTabNavigator();
@@ -199,6 +198,7 @@ const AppNavigator=()=>{
           headerTitle:"Events"
         }}/>
         <Stack.Screen name='Event Registration' component={EventRegistration} options={{headerShown:false}}/>
+        <Stack.Screen name='Highlights' component={Highlights}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

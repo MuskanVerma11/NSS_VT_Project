@@ -16,7 +16,7 @@ const HomeScreen = ({navigation}) => {
             </TouchableOpacity>
             <EventCard/>
             <View style={styles.btnContainer}>
-            <TouchableOpacity style={styles.HighlightBtn}>
+            <TouchableOpacity style={styles.HighlightBtn} onPress={()=>navigation.navigate('Highlights')}>
                 <Text style={styles.HighlightBtnText}>Highlights</Text>
                 <FontAwesome5 name="highlighter" size={15} color="black" />
             </TouchableOpacity>

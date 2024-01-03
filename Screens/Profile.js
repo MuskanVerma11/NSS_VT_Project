@@ -9,7 +9,7 @@ import ProfileCard from './components/ProfileCard';
 const Profile = () => {
     return(
         
-        <ScrollView style={{flex:1, flexDirection:'column', }}>
+        <ScrollView style={{flex:1, flexDirection:'column',backgroundColor:"#FFFFFF" }}>
         <ProfileCard/>
         <View style={styles.container}>
         <View style={styles.miniContainer}>
@@ -69,24 +69,23 @@ const styles = StyleSheet.create({
         flex:1,
         flexDirection:'row',
         justifyContent:'space-between',
-
-    
+        marginTop:hp(20)
     },
     miniContainer:{
         height:hp(60),
         width:wp(30),
-        marginBottom:30,
         marginLeft:20,
         borderRadius:30,
         flexDirection:'column',
         justifyContent:'space-evenly',
-        backgroundColor:'#D9D9D9'
+        // backgroundColor:'#ffffff',
+        // elevation:15
+        backgroundColor:"#d9d9d9"
     },
     volunteeringData:{
         color:'#322962',
         textAlign:'center',
         fontSize:14
-       
     },
     volunteerMilestone:{
         textAlign:'center',
@@ -94,6 +93,7 @@ const styles = StyleSheet.create({
     },
     image : {
         height:wp(30),
-        width: wp(27)
-    }
+        width: wp(27),
+        borderRadius:20
+    },
 })
